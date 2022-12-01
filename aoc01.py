@@ -7,11 +7,10 @@ def get_inputs(path):
     return inputs
 
 
-def get_a(inps):
-    
+def get_top(cals):
     highest = -1
     curr_tot = 0
-    for x in inps:
+    for x in cals:
         if x:
             curr_tot += int(x)
         else:
@@ -21,11 +20,11 @@ def get_a(inps):
     return highest
 
 
-def get_b(inps):
+def get_top3(cals):
     res = []
     curr = 0
-    while inps:
-        x = inps.pop(0)
+    while cals:
+        x = cals.pop(0)
         if x:
             curr += int(x)
         else:
@@ -33,16 +32,12 @@ def get_b(inps):
             curr = 0
     res.sort()
 
-    print(res[-3:])
-
     return sum(res[-3:])
 
 
-
 if __name__ == "__main__":
-    tmp = get_inputs("inputs/day01")
-    #tmp = get_inputs("test/test01")
+    cals = get_inputs("inputs/day01")
+    cals = get_inputs("test/test01")
 
-    #print(tmp)
-    print(get_b(tmp))
-
+    print("Highest:", get_top(cals))
+    print("Total for top three:", get_top3(cals))
