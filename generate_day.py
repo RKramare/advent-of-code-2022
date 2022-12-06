@@ -39,4 +39,4 @@ def create_day(day):
 
 
 if __name__ == "__main__":
-    create_day(5)
+    create_day(6)
